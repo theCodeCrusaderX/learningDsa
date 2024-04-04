@@ -1,6 +1,5 @@
 // find the second largest and second smallest number in an array
 
-
 vector<int> getSecondOrderElements(int n, vector<int> a) {
     // Write your code here.
     vector<int> v;
@@ -13,7 +12,7 @@ vector<int> getSecondOrderElements(int n, vector<int> a) {
         
     }
 
-    int secLargeEle =-1;
+    int secLargeEle =-1; //INT_MIN
     for(int i =0;i<n;i++) {
         if(a[i] != largestEle) {
 
