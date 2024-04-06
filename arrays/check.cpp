@@ -28,12 +28,26 @@ int secLargestEle(vector<int> v,int n)
     return temp_secLar;
 }
 
+    int missingNumber(vector<int>& nums) {
+        int n1 = nums.size();
+        sort(nums.begin(), nums.end());
+        for(int i=0; i<=n1; i++)
+        {
+            if(nums[i] != i)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
 int main()
 {
-    vector<int> v = {1,2,3,4,5};
+    vector<int> v = {0,1,2,4,5};
     int n = v.size();
     cout << "largest element is " << largestEle(v,n) << endl;
     cout << "second largest element is " << secLargestEle(v,n) << endl;
+    cout << "missing no is " << missingNumber(v) << endl;
     return 0;
 }
