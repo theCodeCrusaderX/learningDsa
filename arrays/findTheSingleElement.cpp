@@ -134,3 +134,20 @@ int getSingleElement(vector<int> &arr){
 	}
 }
 
+modified version of above 
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ans = 0;
+        int n = nums.size();
+        int i;
+        sort(nums.begin(),nums.end());
+        for(i=1 ; i<n ;){
+            if(nums[i] != nums[i-1]){
+               return nums[i-1];
+            }
+            i+=2;
+        }
+       return nums[n-1];
+    }
