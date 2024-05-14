@@ -1,4 +1,47 @@
-// find the second largest and second smallest number in an array
+//finding second largest element
+class Solution{
+public:	
+	// Function returns the second
+	// largest elements
+	int print2largest(int arr[], int n) {
+	    // code here
+	    int setlar = arr[0];
+	    for(int i=0;i<n;i++) 
+	    {
+	        if(setlar < arr[i])
+	        {
+	            setlar = arr[i];
+	        }
+	    }
+	    
+	    int setSecLar = INT_MIN;
+	    
+	    for(int i=0;i<n;i++) 
+	    {
+	        if(arr[i] != setlar)
+	        {
+	            if(arr[i] > setSecLar)
+	            {
+	                setSecLar = arr[i];
+	            }
+	        }
+	    }
+	    
+	    if(setSecLar == INT_MIN)
+	    {
+	        return -1;
+	    }
+	    else
+	    {
+	        return setSecLar;
+	    }
+	
+	}
+};
+
+//*****************************************************************************************************************
+
+// find both second largest and second smallest number in an array
 
 vector<int> getSecondOrderElements(int n, vector<int> a) {
     // Write your code here.
@@ -51,3 +94,6 @@ vector<int> getSecondOrderElements(int n, vector<int> a) {
     return v;
 
 }
+
+
+
