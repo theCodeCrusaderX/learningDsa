@@ -1,4 +1,4 @@
-see this is brute force approach because its taking extra space which is O(n) in program 
+see this is brute force approach because its taking (extra space which is O(n) (temp+arr)) in program 
 and time complexity is nere about to O(n)
 
 vector<int> moveZeros(int n, vector<int> a) {
@@ -52,6 +52,8 @@ optimal approach:
 with time complexity is same and extra space complexity 
 is O(1) 
 
+two pointer approach
+
 #include <vector>
 using namespace std;
 
@@ -62,8 +64,7 @@ public:
         if (n == 0) // Check if vector is empty
             return;
         
-        int j = -1;
-        //place the pointer j:
+        int j = -1;  //place the pointer j:
         for (int i = 0; i < n; i++) {
             if (nums[i] == 0 && j == -1) {
                 j = i;

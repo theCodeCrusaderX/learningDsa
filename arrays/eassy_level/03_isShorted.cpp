@@ -3,7 +3,8 @@ we know that:-
 if x<y and y<z 
 then x<z
 
-
+TIME COMPLEXITY O(N)
+SPACE COMPLEXITY O(1)
 int isSorted(int n, vector<int> a) {
     // Write your code here.
     int i=0;
@@ -22,7 +23,8 @@ int isSorted(int n, vector<int> a) {
 }
 
 // method 2
-/*
+//NOT ADVICE TO REMEMBER THIS AS THE ABOVE ONE IS SAME TIME AND SPACE COMPLEXITY AND MORE READABLE
+
     int isSorted(int n, vector<int> a) {
     // Write your code here.
     int temp = a[0];
@@ -36,4 +38,4 @@ int isSorted(int n, vector<int> a) {
     }
     return 1;
     
-}*/
+}

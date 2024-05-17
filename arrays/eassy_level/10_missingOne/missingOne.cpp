@@ -1,14 +1,13 @@
 this is brute approach and the time complexity is O(n^2)
 
-#include <bits/stdc++.h>
-
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         int n = nums.size();
-        int flag=0;
-        for(int i=0;i<n;i++)
+        int i;
+        for(i=0;i<n+1;i++)
         {
+            int flag =0;
             for(int j=0;j<n;j++)
             {
                 if(nums[j] == i)
@@ -17,33 +16,30 @@ public:
                     break;
                 }
             }
-            if(flag == 0) return i;
+            if(flag == 0) break;
         }
-        return -1;
+        return i;
     }
 };
 
 
 method 2-
 better approach
-time complexity is O(n logn)
+time complexity is O(n logn) + O(n) but for larger value of n O(nlogn) domenent!
 
-problem is in line 41 does not hold for larger input it may give out of boundary error
-#include <bits/stdc++.h>
+larger input may give out of boundary error 
 
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n1 = nums.size();
-        sort(nums.begin(), nums.end());
-        for(int i=0; i<=n1; i++)
+        int n = nums.size();
+        sort(nums.begin(),nums.end());
+        int i;
+        for( i=0;i<n;i++)
         {
-            if(nums[i] != i)
-            {
-                return i;
-            }
+            if(nums[i] != i) break;
         }
-        return -1;
+        return i;
     }
 };
 
@@ -57,17 +53,18 @@ and extra space complexity is O(n) too...
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n= nums.size();
-        int hash[n+1] = {0};
-        for(int i=0;i<n-1;i++)
+        int n=nums.size();
+        vector<int> hash(n + 1, 0);
+        for(int i=0;i<n;i++)
         {
             hash[nums[i]] = 1;
         }
 
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n+1;i++)
         {
             if(hash[i] == 0) return i;
         }
+        return -1;
     }
 };
 
@@ -97,24 +94,34 @@ in the above optimal sol there might be chances of int overflow but in this case
 things happens
 
 int missingNumber(vector<int>& nums) {
-        // int n = nums.size();
-        // int XOR1 = 0;
-        // int XOR2 = 0;
-        // for (int i = 0; i < n; i++) {
-        //     XOR1 = XOR1 ^ i;
-        // }
-        // for (int i = 0; i < n; i++) { // Corrected loop condition
-        //     XOR2 = XOR2 ^ nums[i];
-        // }
-        // return (XOR1 ^ XOR2);
+        int n = nums.size();
+        int XOR1 = 0;
+        int XOR2 = 0;
+        for (int i = 0; i < n; i++) {
+            XOR1 = XOR1 ^ i;              //in memory it will take at as a number for eg. 0^1^2^3^4 = 4
+        }
+        for (int i = 0; i < n; i++) { 
+            XOR2 = XOR2 ^ nums[i];     //same as here it will take it as a number 
+        }
+        return (XOR1 ^ XOR2);   //b
+
+}
+
+same as above but decrement one extra loop
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
 
         int N=nums.size();
         int xor1 = 0, xor2 = 0;
 
-        for (int i = 0; i < N - 1; i++) {
-            xor2 = xor2 ^ nums[i]; // XOR of array elements
-            xor1 = xor1 ^ (i + 1); //XOR up to [1...N-1]
-        }
-        xor1 = xor1 ^ N; //XOR up to [1...N]
+            for (int i = 0; i < N ; i++) {
+                xor2 = xor2 ^ nums[i]; // XOR of array elements
+                xor1 = xor1 ^ (i); //XOR up to [1...N-1]
+            }
+            xor1 = xor1 ^ N; //XOR up to [1...N]
 
-        return (xor1 ^ xor2);
+            return (xor1 ^ xor2); 
+    }
+};

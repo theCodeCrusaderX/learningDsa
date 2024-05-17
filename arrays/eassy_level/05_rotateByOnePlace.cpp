@@ -1,3 +1,9 @@
+
+OPTIMAL APPROACH:
+
+TIME COMPLEXITY : O(N)
+EXTRA SPACE COMPLEXITY : O(1)
+
 #include <bits/stdc++.h> 
 vector<int> rotateArray(vector<int>& arr, int n) {
     // Write your code here.

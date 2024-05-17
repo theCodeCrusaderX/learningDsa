@@ -16,7 +16,7 @@ int getSingleElement(vector<int> &arr){
 	for(int i=0;i<n;i++)
 	{
 		temp = arr[i];
-		int c=0;  //we have to reset the value of c
+		int c=0;  					//we have to reset the value of c
 		for(int j=0;j<n;j++)
 		{
 			if(temp == arr[j])
@@ -71,25 +71,21 @@ to avoid this type of problem we are using map data structure:-
 Therefore, the overall time complexity of the getSingleElement function is O(n log n),
 where n is the size of the input vector arr.
 
-#include <bits/stdc++.h>>
-#include<vector>
-
-int getSingleElement(vector<int> &arr){
-	int n = arr.size();
-	map<long long,int> mpp;
-	for(int i=0;i<n;i++)
-	{
-		mpp[arr[i]]++;
-	}
-
-	for(auto it : mpp)
-	{
-		if(it.second == 1)
-		{
-			return it.first ;
-		}
-	}
-}
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        map<int,int> mpp;
+        for(int i=0;i<nums.size();i++)
+        {
+            mpp[nums[i]]++;
+        }
+        for(auto it : mpp)
+        {
+            if(it.second == 1) return it.first;
+        }
+        return -1;
+    }
+};
 
 
 method 3:-
@@ -101,12 +97,12 @@ extra space complexity is O(1)
 #include<vector>
 
 int getSingleElement(vector<int> &arr){
-	int Xor = 0;
+	int Xor1 = 0;
 	for(int i=0;i<arr.size();i++)
 	{
-		Xor = Xor^arr[i];
+		Xor1 = Xor1 ^ arr[i];
 	}
-	return Xor;
+	return Xor1;
 }
 
 another optimal solution for this particular problem
@@ -151,3 +147,4 @@ public:
         }
        return nums[n-1];
     }
+}

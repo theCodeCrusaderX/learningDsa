@@ -23,6 +23,9 @@ vector < int > sortedArray(vector < int > a, vector < int > b) {
 optimal solution :--
 time complexity of the function is O(n1 + n2), where n1 is the size of vector a and
 n2 is the size of vector b. 
+
+EXTRA SPACE COMPLEXITY : O(K) WHERE K IS THE NO OF UNIQUE ELEMENTS. 
+
 #include <bits/stdc++.h>
 
 vector < int > sortedArray(vector < int > a, vector < int > b) {

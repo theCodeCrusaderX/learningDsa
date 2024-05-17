@@ -69,7 +69,7 @@ vector<int> getSecondOrderElements(int n, vector<int> a) {
     }
     v.push_back(secLargeEle);
 
-    int smallestEle=a[0];
+    int smallestEle=a[0];  
     
     for(int i=1;i<n;i++) {
         if(smallestEle > a[i]) {
@@ -78,14 +78,16 @@ vector<int> getSecondOrderElements(int n, vector<int> a) {
         
     }
 
-    int secSmallestEle =-1;
+    int secSmallestEle =-1; //we are assuming all array element must be greater than 0 or else take INT_MIN
     for(int i =0;i<n;i++) {
         if(a[i] != smallestEle) {
 
             if(secSmallestEle == -1) {
                 secSmallestEle = a[i];
 
-            }else if(a[i] <= secSmallestEle) {
+            }
+            
+            else if(a[i] <= secSmallestEle) {
                 secSmallestEle = a[i];
             }
         }

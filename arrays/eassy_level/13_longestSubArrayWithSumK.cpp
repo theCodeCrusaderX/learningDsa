@@ -60,6 +60,15 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
 
 
 
+
+
+
+
+
+
+
+
+
 // it is done by me i dont know why it is not working:--
 // vector<int> sum(vector<int> v,long long k)
 // {
