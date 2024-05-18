@@ -1,3 +1,8 @@
+
+/*
+ *Longest Subarray with given Sum K(Positives)
+*/
+
 brute aproach:--
 time complexity is O(n^3)
 extra space complexity is O(1)
@@ -48,6 +53,80 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
     return len;
 }
 
+BETTER SOLUTION: using map ds
+
+TIME COMPLEXITY: O(N logN)+O(N) for larger val of N it would be O(N logN)
+
+EXTRA SPACE COMPLEXITY: O(N) in wrost case if 0 not present in the given arr
+
+
+class Solution{
+    public:
+    int lenOfLongSubarr(int A[],  int N, int K) 
+    {
+        int sum =0;
+        int maxLen =0;
+        map<int,int> mpp;
+        for(int i=0;i<N;i++)
+        {
+            sum+=A[i];
+            
+            if(sum == K)
+            {
+                maxLen = max(maxLen,i+1);
+            }
+            
+            int rem = sum - K;
+            
+            if(mpp.find(rem) != mpp.end())
+            {
+                int len = i-mpp[rem];
+                maxLen = max(maxLen,len);
+            }
+            
+            if(mpp.find(sum) == mpp.end())
+            {
+                mpp[sum] = i;
+            }
+        }
+        return maxLen;
+    } 
+};
+
+
+most OPTIMAL SOL FOR THIS PROBLEM ONLY FOR POSITIVE INCLUDING ZERO IN THE ARRAY :
+
+TWO POINTER APPROACH
+TIME COMPLEXITY IS O(N)
+
+    int lenOfLongSubarr(vector<int>A,  int N, int K) 
+    {
+        int left=0;
+        int right=0;
+        int sum=A[0];
+        int maxLen =0;
+        while(right < N)
+        {
+            if(right < N)
+            {
+                right++;
+                sum+=A[right];
+            }
+            
+            if(sum == K)
+            {
+                maxLen = max(maxLen,right-left+1);
+            }
+            
+            if(left<=right && sum > K)
+            {
+                sum-=A[left];
+                left++;
+            }
+        }
+       
+        return maxLen;
+    } 
 
 
 
