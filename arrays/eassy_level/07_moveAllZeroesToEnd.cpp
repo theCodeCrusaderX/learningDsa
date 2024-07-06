@@ -1,4 +1,26 @@
-see this is brute force approach because its taking (extra space which is O(n) (temp+arr)) in program 
+
+
+
+
+
+
+
+
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+
+
+
+
+
+
+
+
+
+
+
+brute force approach because its taking (extra space which is O(n) (temp+arr)) in program 
 and time complexity is nere about to O(n)
 
 vector<int> moveZeros(int n, vector<int> a) {
@@ -67,7 +89,7 @@ public:
         int j = -1;  //place the pointer j:
         for (int i = 0; i < n; i++) {
             if (nums[i] == 0 && j == -1) {
-                j = i;
+                j = i;       //willing to find our first element have value 0
             }
             if (nums[i] != 0 && j != -1) {
                 if (i != j) { // Skip unnecessary swaps

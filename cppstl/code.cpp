@@ -29,7 +29,7 @@ void explainvector()
 
 // vector iterator
 
-    vector<int>::iterator it = v.begin(); //the it will point to the first address.
+    vector<int>::iterator it = v.begin(); //this will point to the first address.
     it++; // incrementing by 1 in address
     cout << *(it) << " "; //going to print the value.
 
@@ -112,7 +112,7 @@ void explainDeque()
     dq.pop_back(); //{44,88,2}
     dq.pop_front(); //{88,2}
 
-    dq.back(); // gives last element i.e 2
+    dq.back(); //gives last element i.e 2
     dq.front(); //gives front element i.e 88
 
     //rest function same as vector 
@@ -145,7 +145,6 @@ void explainQueue()
     //back front pop  size swap empty same as stack.
 
     //all the operations are having O(1) time complexity.
-
 
 }
 
@@ -285,7 +284,8 @@ void explainMultimap() {
 }
 
 void explainUnorderedMap() {
-    //O(1) and in wrost case O(n).
+    //avareage and best O(1) and 
+    //in wrost case O(n).  ->> if all the elements are maped with the same key
 }
 int main() 
 {

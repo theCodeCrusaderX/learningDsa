@@ -1,7 +1,24 @@
 
+
+
+
+
 /*
  *Longest Subarray with given Sum K(Positives & negative & zeros)
 */
+
+
+Input :
+A[] = {10, 5, 2, 7, 1, 9}
+K = 15
+Output : 4
+Explanation:
+The sub-array is {5, 2, 7, 1}.
+
+
+
+
+
 
 brute aproach:--
 time complexity is O(n^3)

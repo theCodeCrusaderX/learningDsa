@@ -1,7 +1,24 @@
+
+
+
+
+
+
 Problem statement:-
+
+**FIND THE NUMBER THAT APPEARS ONCE, AND THE OTHER NUMBERS TWICE**
+
 You are given a sorted array 'arr' of positive integers of size 'n'.
 It contains each number exactly twice except for one number, which occurs exactly once.
 Find the number that occurs exactly once
+
+Input: nums = [2,2,1]
+Output: 1
+
+
+
+
+
 
 
 brute aproach:-
@@ -35,7 +52,7 @@ int getSingleElement(vector<int> &arr){
 
 
 method 2:-
-better approach:-
+better approach:-  array hashing
 
 but while submitting it gives us time limiting exceed but still
 time complexity of this code of O(n)
@@ -77,7 +94,7 @@ public:
         map<int,int> mpp;
         for(int i=0;i<nums.size();i++)
         {
-            mpp[nums[i]]++;
+            mpp[nums[i]]++;				//it is taking O(log n) time complexity
         }
         for(auto it : mpp)
         {
@@ -86,6 +103,8 @@ public:
         return -1;
     }
 };
+
+	WE CAN ALSO USE unordered_map TO DECREASE TIME COMPLEXITY
 
 
 method 3:-

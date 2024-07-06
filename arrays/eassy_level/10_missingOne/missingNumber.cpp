@@ -1,24 +1,55 @@
-this is brute approach and the time complexity is O(n^2)
+
+
+
+
+
+
+
+Input: nums = [3,0,1]
+Output: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Explanation: 
+    n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number 
+    in the range since it does not appear in nums.
+
+
+brute approach and the time complexity is O(n^2)
 
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n = nums.size();
-        int i;
-        for(i=0;i<n+1;i++)
+
+        int n=nums.size();
+        for(int i=0;i<=n;i++)
         {
             int flag =0;
-            for(int j=0;j<n;j++)
+            for(auto it : nums)
             {
-                if(nums[j] == i)
+                    
+                if(i == it)
                 {
-                    flag =1;
+                    flag = 1;
                     break;
                 }
+                
             }
-            if(flag == 0) break;
+            if(flag == 0) return i ;
         }
-        return i;
+        return 0;
+  
     }
 };
 

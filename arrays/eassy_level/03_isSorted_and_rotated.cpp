@@ -8,7 +8,7 @@ basic points :
 if the given problem is rotated and sorted array then exclude { inversion ==0 --> true } 
 
 1) inversions == 0 ---> true
-2) inversion == 1 && arr[n-1] < arr[0]  ---> true   //main logic
+2) inversion == 1 && arr[n-1] <= arr[0]  ---> true   //main logic
 3) else false
 
 CODE :--

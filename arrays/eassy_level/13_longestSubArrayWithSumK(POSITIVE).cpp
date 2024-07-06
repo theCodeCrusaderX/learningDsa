@@ -1,7 +1,23 @@
 
+
+
+
+
+
 /*
  *Longest Subarray with given Sum K(Positives)
 */
+
+Input :
+A[] = {10, 5, 2, 7, 1, 9}
+K = 15
+Output : 4
+Explanation:
+The sub-array is {5, 2, 7, 1}.
+
+
+
+
 
 brute aproach:--
 time complexity is O(n^3)
@@ -56,7 +72,6 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
 BETTER SOLUTION: using map ds
 
 TIME COMPLEXITY: O(N logN)+O(N) for larger val of N it would be O(N logN)
-
 EXTRA SPACE COMPLEXITY: O(N) in wrost case if 0 not present in the given arr
 
 
@@ -107,15 +122,15 @@ TIME COMPLEXITY IS O(N)
         int maxLen =0;
         while(right < N)
         {
+            if(sum == K)
+            {
+                maxLen = max(maxLen,right-left+1);
+            }
+            
             if(right < N)
             {
                 right++;
                 sum+=A[right];
-            }
-            
-            if(sum == K)
-            {
-                maxLen = max(maxLen,right-left+1);
             }
             
             if(left<=right && sum > K)

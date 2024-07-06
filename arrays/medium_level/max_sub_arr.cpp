@@ -41,8 +41,31 @@ int maxSubarraySum(int arr[], int n) {
     return maxi;
 }
 
+
+kadane's algorithm: 
+looping through the entire array if sum is < 0 then discard it and set to 0 and continuously update the maxi.
+
 optimal approach
 time complexity O(n)
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        // kadane's algo
+        int n = nums.size();
+        int sum =0;
+        int maxi = INT_MIN;
+        for (int i = 0; i<n;i++)
+        {
+            sum+=nums[i];
+            maxi = max(maxi,sum);
+            if(sum < 0) sum =0;
+        }
+        return maxi;
+    }
+};
+
+// we can also print the element of maximun sum of sub array;
 
 long long maxSubarraySum(int arr[], int n) 
 {
@@ -60,8 +83,8 @@ long long maxSubarraySum(int arr[], int n)
         if (sum > maxi) 
         {
             maxi = sum;
-            ansStart = start;
-            ansEnd = i;
+            ansStart = start;   //every time when sum is zero we are strting a new sub array
+            ansEnd = i;       //cause we have to find the maximum sub array 
         }
 
         if (sum < 0) 

@@ -1,4 +1,27 @@
 
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BRUTE FORCE APPROACH:
 
 TIME COMPLEXITY O(n logn)
@@ -10,7 +33,7 @@ public:
         set<int> st;
         for(int i=0;i<nums.size();i++)
         {
-            st.insert(nums[i]);
+            st.insert(nums[i]);     //insertion ka time complexity is O(log n)
         }
 
         int i=0;
@@ -22,6 +45,30 @@ public:
         return i;
     }
 };
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> arr = {5,1,2,2,10,3,1,4,5};
+    unordered_map<int,int> mpp;
+    
+    for(auto it : arr)
+    {
+        mpp[it]++;     //in avg or best it will take O(1)
+    }
+    
+    for(auto it : mpp)
+    {
+        cout << "key " << it.first << "value " << it.second << endl;
+    }
+    
+    return 0;
+}
+
+
 
 OPTIMAL APPROACH:  TWO POINTER APPROACH
 
@@ -37,7 +84,7 @@ public:
             if(nums[i] != nums[j])
             {
                 i++;
-                swap(nums[i],nums[j]);
+                if(i != j) swap(nums[i],nums[j]);
             }
         }
         return i+1;
