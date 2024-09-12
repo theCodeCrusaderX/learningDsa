@@ -81,7 +81,7 @@ space complexity is O(n)
 int longestSuccessiveElements(vector<int>& nums) {
     int n = nums.size();
     unordered_set<int> st;
-    int longest = 1;
+    int longest = 0;
     for(auto it : nums)
     {
         st.insert(it);
@@ -107,6 +107,7 @@ int longestSuccessiveElements(vector<int>& nums) {
     return longest;
     
 }
+
 
 int main()
 {

@@ -21,7 +21,7 @@ Next Permutation:
 
 Step 1: the traversing from right condition and checking for arr[i] < arr[i]
 
-Step 2: Circle or its or mark the position (i-1)th and beyound its left finding the no. greater greater than arr[i-1] from right side .
+Step 2: Circle or its or mark the position (i-1)th and beyound its right finding the no. greater greater than arr[i-1] from left side .
 
 Step 3: swap them i.e arr [i-1] & the no. found.
 

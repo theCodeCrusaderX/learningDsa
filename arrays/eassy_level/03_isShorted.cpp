@@ -1,7 +1,12 @@
+////midified
+
+
+
 we know that:-
 
 if x<y and y<z 
 then x<z
+
 
 TIME COMPLEXITY O(N)
 SPACE COMPLEXITY O(1)
