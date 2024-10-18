@@ -1,7 +1,5 @@
 
-there is a brute force approach too u can use  time complexity wll be O(n^2)
-
-
+there is a brute force approach too, u can use  time complexity wll be O(n^2)
 
 
 class Solution {

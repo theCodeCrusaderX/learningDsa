@@ -7,6 +7,8 @@ class Solution {
         
         for(int i=0;i<n;i++)
         {
+
+            //important condition
             if(arr[i] > maxAllowedPages) return false;
             
             if(p+arr[i] <= maxAllowedPages){
