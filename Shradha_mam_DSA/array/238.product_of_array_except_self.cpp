@@ -7,7 +7,7 @@ for(int i=0;i<n;i++)
   {
     if(j!=i)
     {
-      vec[i]*=nums[i];
+      vec[i]= vec[i]*nums[j];
     }
   }
 }
@@ -52,6 +52,7 @@ public:
         int n = nums.size();
         vector<int> res(n,1);
 
+        //stored prefix in res
         for(int i=1; i<n; i++)
         {
             res[i] = res[i-1]*nums[i-1];
