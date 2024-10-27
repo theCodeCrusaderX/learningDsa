@@ -11,15 +11,19 @@ public:
         while (st <= end) {
             int mid = st + (end - st) / 2;
 
+            //if mid be the first value
             if (mid == 0 && nums[mid] != nums[mid + 1])
                 return nums[mid];
+
+            //if mid be the last value
             if (mid == n - 1 && nums[mid] != nums[mid - 1])
                 return nums[mid];
 
+            //if mid be the middle value
             if (nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1])
                 return nums[mid];
+                
             // finding the no. of element in left or right half i.e even or odd.
-
             if (mid % 2 == 0) // even
             {
                 if (nums[mid] == nums[mid - 1])

@@ -2,6 +2,8 @@ class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
         int n = arr.size();
+
+        //edge case that we dont getting our ans in first or last 
         int st = 1;
         int end = n-2;
 
