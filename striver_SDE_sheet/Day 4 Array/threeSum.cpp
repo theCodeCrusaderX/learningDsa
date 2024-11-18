@@ -10,6 +10,8 @@ public:
             else if(nums[i] + nums[j] < target) i++;
             else {
                 result.push_back({-target,nums[i],nums[j]});
+
+                // whay i am doing this ? [-2,0,0,2,2]
                 while(i < j && nums[i] == nums[i+1]) i++;
                 while(i < j && nums[j] == nums[j-1]) j--;
 

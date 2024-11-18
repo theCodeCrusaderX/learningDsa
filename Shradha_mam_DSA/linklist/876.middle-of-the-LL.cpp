@@ -78,19 +78,4 @@ public:
     }
 };
 
-// optimal sol fast and slow pointer ;
-class Solution {
-public:
-    bool hasCycle(ListNode *head) {
-        ListNode *slow = head, *fast = head;
 
-        while (fast != NULL && fast->next != NULL) {
-            slow = slow->next;
-            fast = fast->next->next;
-
-            if (slow == fast) return true; // Cycle detected
-        }
-
-        return false; // No cycle
-    }
-};
