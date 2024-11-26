@@ -1,0 +1,6 @@
+decimal to binary
+binary to decimal
+
+1's complement
+2's complement
+

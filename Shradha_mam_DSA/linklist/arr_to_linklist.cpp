@@ -1,4 +1,4 @@
-// insted of struct that we use in c we are using class in c++ and constructor
+// insted of struct that we use in c, we are using class in c++ and constructor to get oops benefits
 
 // class Node{
 //     Public: // access modifier
