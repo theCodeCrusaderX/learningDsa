@@ -5,7 +5,8 @@ class Solution {
 public:
 
     bool isSafe(vector<string> &board, int row, int col, int n) {  //O(n)
-        //horizontal check ;
+        //horizontal check ;  
+        //but actually we dont need to check for this condition cause for every function call we are passing new row i.e row + 1 
         for(int j=0; j<n; j++) {
             if(board[row][j] == 'Q') {
                 return false;
