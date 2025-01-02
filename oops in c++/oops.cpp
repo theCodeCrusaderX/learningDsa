@@ -7,7 +7,7 @@ class Teacher {
     double salary;  //not access in main function or other classes
 
   public:
-    Teacher() {  //non-parametarize constructor
+    Teacher() {  // non-parametarize constructor
       cout << "hello form constructor function\n";
       dep = "computer science";  //we can also set default properties 
     }
